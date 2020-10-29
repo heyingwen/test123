@@ -1,0 +1,50 @@
+#__hky-im__ {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  iframe {
+    border: none;
+
+    body {
+      background-color: transparent !important;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &.hide,
+  .hide {
+    display: none !important;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+/*定义滚动条高宽及背景
+ 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+ {
+   width:4px;
+   height:4px;
+   background-color:transparent;
+ }
+ /*定义滚动条轨道
+  内阴影+圆角*/
+::-webkit-scrollbar-track
+ {
+   border-radius:4px;
+   background-color: transparent;
+ }
+ /*定义滑块
+  内阴影+圆角*/
+::-webkit-scrollbar-thumb
+ {
+   border-radius:2px;
+   background-color:#3b3b3b;
+ }

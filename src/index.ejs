@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+  <% for (var js in htmlWebpackPlugin.options.files.js) { %>
+  <script src="<%= htmlWebpackPlugin.options.files.js[js] %>"></script>
+  <% } %>
+</head>
+
+<body>
+  <style>
+    html,
+    body {
+      height: 100%;
+      background: #eee;
+    }
+
+    #container {
+      height: 100%;
+      max-width: 500px;
+      background: #f2f2f2;
+    }
+  </style>
+  <div id="container"></div>
+  <script type="module">
+    import getUser from './GenerateTestUserSig.js'
+      const userInfo = getUser('1276038')
+      HKYIM.init({
+        container: document.querySelector('#container'),
+        userID: '1276038',
+        userSig: userInfo.userSig,
+        roomID: '@TGS#233DU55ZWG3',
+        // roomID: '@TGS#33CFPGMGH',
+        role: 1, // 1: 教师，2：助教，3：班主任，4：学生,
+        contentId: 6756, // 内容ID
+        nickName: 'Hank', // 昵称，在LPS系统中的获取逻辑为有昵称时优先取昵称，没有时则取真名，若不填则IM内部会请求LPS系统获取，非必填
+        avatar: 'https://img.kaikeba.com/84001140900202qklj.gif', // 头像地址，非必填
+        liveId: 'live-839253928247296',
+        liveToken: '4562d78fb93745bd94d136f2d096cf87',
+        // useUI: false,
+        // isGuest:false,
+        // tabActiveKey:'4',
+        // im-tab切换
+        tabList:[
+          // {
+          //   label: '课程详情页',
+          //   key: '4',
+          //   icon: '',
+          //   iframeUrl: '',
+          // },
+          {
+            label: '聊天',
+            key: '_CHAT',
+            icon: '//img.kaikeba.com/55134112400202ltzu.png',
+            iframeUrl: '',
+          },
+          {
+            label: '答题',
+            key: '_ASK',
+            icon: '//img.kaikeba.com/55134112400202nryc.png',
+            iframeUrl: '',
+          },
+          {
+            label: '活动',
+            key: '_ACTIVITY',
+            icon: '//img.kaikeba.com/55134112400202lpbs.png',
+            iframeUrl: '',
+          },
+          {
+            label: '货架',
+            key: '_STUDENT_GOODS',
+            icon: '//img.kaikeba.com/55134112400202lpbs.png',
+          },
+        ]
+
+      })
+     /* setTimeout(() => {
+        HKYIM.setTabActiveKey('_货架')
+      }, 8000) */
+    </script>
+  <script></script>
+</body>
+
+</html>

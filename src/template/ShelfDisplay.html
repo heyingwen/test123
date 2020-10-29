@@ -1,0 +1,15 @@
+<a
+  class="{{=it.textClass}}"
+  href="{{=it.url}}"
+  target="_blank"
+>
+  {{? it.type === 'pic'}}
+    <img
+      class="im-dlg-shelf-img"
+      src="{{=it.content}}"
+      alt="开课吧"
+    >
+  {{?? it.type === 'text'}}
+    <p class="im-dlg-shelf-text">{{=it.content}}</p>
+  {{?}}
+</a>

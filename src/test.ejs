@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+  <% for (var js in htmlWebpackPlugin.options.files.js) { %>
+  <script src="<%= htmlWebpackPlugin.options.files.js[js] %>"></script>
+  <% } %>
+</head>
+
+<body>
+  <style>
+    html,
+    body {
+      height: 100%;
+      background: #eee;
+    }
+
+    #container {
+      height: 100%;
+      max-width: 500px;
+      background: #f2f2f2;
+    }
+  </style>
+  <div id="container"></div>
+  <script type="module">
+    import getUser from './GenerateTestUserSig.js'
+      const userInfo = getUser('1203867')
+      HKYIM.init({
+        container: document.querySelector('#container'),
+        userID: '1203867',
+        userSig: userInfo.userSig,
+        roomID: '@TGS#3KPTGBSGT',
+        // roomID: '@TGS#33CFPGMGH',
+        role: 4, // 1: 教师，2：助教，3：班主任，4：学生,
+        contentId: 6004, // 内容ID
+        nickName: 'student', // 昵称，在LPS系统中的获取逻辑为有昵称时优先取昵称，没有时则取真名，若不填则IM内部会请求LPS系统获取，非必填
+        avatar: 'http://test.res.kaikeba.com/image/123/20200422105118-59617/FknOqAisrwwg93ZnWuSOf5X8TUNv.jpeg', // 头像地址，非必填
+        liveId: 'live-835356846456832',
+        liveToken: '179659bfde4748e8b1b920c40720c124',
+        // isGuest:false,
+        // tabActiveKey:'4',
+        // im-tab切换
+        tabList:[
+          {
+            label: '课程详情页',
+            key: '4',
+            icon: '',
+            iframeUrl: '',
+          },
+          {
+            label: '聊天',
+            key: '_CHAT',
+            icon: '//img.kaikeba.com/55134112400202ltzu.png',
+            iframeUrl: '',
+          },
+          {
+            label: '答题',
+            key: '_ASK',
+            icon: '//img.kaikeba.com/55134112400202nryc.png',
+            iframeUrl: '',
+          },
+          // {
+          //   label: '活动',
+          //   key: '_ACTIVITY',
+          //   icon: '//img.kaikeba.com/55134112400202lpbs.png',
+          //   iframeUrl: '',
+          // },
+        ]
+
+      })
+    </script>
+  <script></script>
+</body>
+
+</html>
